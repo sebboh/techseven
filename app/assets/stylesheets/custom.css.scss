@@ -7,4 +7,12 @@ main {
   //padding-bottom: 80px;
   width: 100%;
   margin-top: 55px; // accommodate the navbar
+}
+
+@for $i from 0 through 8 {
+  #title#{$i} {
+    position: absolute;
+    width: 35px;
+    margin-left: #{35 + 35 * $i}px;
   }
+}

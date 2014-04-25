@@ -1,1 +1,51 @@
-<span class="title"><h1>TECHSEVEN</h1></span>
+<% content_for :head do %>
+<script type="text/javascript">
+$(document).ready(function() 
+{ 
+
+  $( "#title" ).mouseenter(function(e) {
+    $.each($('#title > h1 > span'), 
+      function(index, letter) { 
+        diff = $(letter).attr('data-pos-new') - $(letter).attr('data-pos-base');
+        move = "+=" + diff * 35 + "px"
+        $(letter).animate(
+                    {"left": move},
+                    "slow");
+      }
+    );
+  });
+  
+  $( "#title" ).mouseleave(function(e) {
+    $.each($('#title > h1 > span'), 
+      function(index, letter) { 
+        diff = $(letter).attr('data-pos-new') - $(letter).attr('data-pos-base');
+        move = "-=" + diff * 35 + "px"
+        $(letter).animate(
+                    {"left": move},
+                    "slow");
+      }
+    );
+  });
+} 
+);
+</script>
+<% end %>
+<div class="row">
+  <div class="col-md-12">
+    <span id="title">
+      <h1>
+        <span id='title0' data-pos-base='0' data-pos-new='1'>T</span>
+        <span id='title1' data-pos-base='1' data-pos-new='7'>E</span>
+        <span id='title2' data-pos-base='2' data-pos-new='5'>C</span>
+        <span id='title3' data-pos-base='3' data-pos-new='6'>H</span>
+        <span id='title4' data-pos-base='4' data-pos-new='0'>S</span>
+        <span id='title5' data-pos-base='5' data-pos-new='2'>E</span>
+        <span id='title6' data-pos-base='6' data-pos-new='3'>V</span>
+        <span id='title7' data-pos-base='7' data-pos-new='4'>E</span>
+        <span id='title8' data-pos-base='8' data-pos-new='8'>N</span>
+      </h1>
+    </span>
+    <br/>
+    <br/>
+  </div>
+</div>
