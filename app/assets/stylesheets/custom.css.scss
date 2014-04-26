@@ -12,8 +12,9 @@ main {
 @for $i from 0 through 8 {
   #title#{$i} {
     position: absolute;
-    width: 35px;
-    margin-left: #{35 + 35 * $i}px;
+    width: 120px;
+    margin-left: #{120 + 120 * $i}px;
     left: 0px;
+    font-size: 4em;
   }
 }

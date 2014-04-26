@@ -6,7 +6,7 @@ $(document).ready(function()
     $.each($('#title > h1 > span'), 
       function(index, letter) { 
         diff = $(letter).attr('data-pos-new') - $(letter).attr('data-pos-base');
-        move = "+=" + diff * 35 + "px"
+        move = "+=" + diff * 120 + "px"
         if (diff != 0) {
           $(letter).animate(
             {"left": move},
@@ -27,7 +27,7 @@ $(document).ready(function()
     $.each($('#title > h1 > span'), 
       function(index, letter) { 
         diff = $(letter).attr('data-pos-new') - $(letter).attr('data-pos-base');
-        move = "-=" + diff * 35 + "px"
+        move = "-=" + diff * 120 + "px"
         if (diff != 0) {
           $(letter).animate(
             {"left": move},
@@ -62,6 +62,12 @@ $(document).ready(function()
         <span id='title8' data-pos-base='8' data-pos-new='8'>N</span>
       </h1>
     </span>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
     <br/>
     <br/>
   </div>
