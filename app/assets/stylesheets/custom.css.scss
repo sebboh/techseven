@@ -1,12 +1,53 @@
 // import the CSS framework
 @import "bootstrap";
 
+/* retina displays */
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: image-url($file + '.' + $type);
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx){
+    & {
+      background-image: image-url($file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+      -moz-background-size: $width $height;
+      -o-background-size: $width $height;
+      background-size: $width $height;
+    }
+  }
+}
+
 main {
   //@extend .container;
   //background-color: #eee;
   //padding-bottom: 80px;
   width: 100%;
   margin-top: 55px; // accommodate the navbar
+}
+
+body {
+  @include background-image-retina('retina_wood', 'png', 512px, 512px);
+  .body-content {
+    @extend .container-fluid;
+    padding: 0px 30px 30px;
+  }
+}
+
+section {
+  @extend .row;
+  margin-top: 20px;
+}
+
+.column-full {
+  @extend .col-md-12;
+}
+
+.bg-light {
+  // background-image: image-url('crossword.png');
+  background-color: #fff;
 }
 
 @for $i from 0 through 8 {
