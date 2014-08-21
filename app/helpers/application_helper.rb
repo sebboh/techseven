@@ -6,6 +6,6 @@ module ApplicationHelper
   end
 
   def root_name
-    "TECHseven"
+    "Techseven"
   end
 end

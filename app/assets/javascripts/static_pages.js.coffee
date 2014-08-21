@@ -3,50 +3,36 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $('.static_pages.home').ready ->
-  animating1 = false
-  animating2 = false
-  $('#title').mouseenter((e) ->
-    if (!animating1)
-      animating1 = true
-      $.each(
-        $('#title > h1 > span'), 
-        (index, letter) ->
-          diff = $(letter).attr('data-pos-new') - $(letter).attr('data-pos-base')
-          move = "+=" + diff * 120 + "px"
-          if (diff != 0)
-            $(letter).animate(
-              {"left": move},
-              1000,"swing", ->
-                animating1 = false)
-          else
-            $(letter).animate(
-              {"left": "-=50px"},
-              500)
-            $(letter).animate(
-              {"left": "+=50px"},
-              500)
-      )
+  $('#techseven-box').mouseenter((e) ->
+    $.each(
+      $('.box-letter'), 
+      (index, letter) ->
+        if ($(letter).attr('data-pos-new') == $(letter).attr('data-pos-base'))
+          $(letter).css({
+            '-webkit-transform' : 'rotate(-360deg)',
+            '-moz-transform' : 'rotate(-360deg)',  
+            '-ms-transform' : 'rotate(-360deg)',  
+            '-o-transform' : 'rotate(-360deg)',  
+            'transform' : 'rotate(-360deg)'
+          })
+        else
+          $(letter).attr("id", "title" + $(letter).attr('data-pos-new'))
+    )
   )
   
-  $('#title').mouseleave((e) ->
-    if (!animating2)
-      animating2 = true
-      $.each(
-        $('#title > h1 > span'), 
-        (index, letter) ->
-          diff = $(letter).attr('data-pos-new') - $(letter).attr('data-pos-base')
-          move = "-=" + diff * 120 + "px"
-          if (diff != 0)
-            $(letter).animate(
-              {"left": move},
-              1000,"swing", ->
-                animating2 = false);
-          else
-            $(letter).animate(
-              {"left": "-=50px"},
-              500);
-            $(letter).animate(
-              {"left": "+=50px"},
-              500);
-      )
+  $('#techseven-box').mouseleave((e) ->
+    $.each(
+      $('.box-letter'), 
+      (index, letter) ->
+        if ($(letter).attr('data-pos-new') == $(letter).attr('data-pos-base'))
+          $(letter).css({
+            '-webkit-transform' : 'rotate(0deg)',
+            '-moz-transform' : 'rotate(0deg)',  
+            '-ms-transform' : 'rotate(0deg)',  
+            '-o-transform' : 'rotate(0deg)',  
+            'transform' : 'rotate(0deg)'
+          })
+        else
+          $(letter).attr("id", "title" + $(letter).attr('data-pos-base'))
+    )
   )
