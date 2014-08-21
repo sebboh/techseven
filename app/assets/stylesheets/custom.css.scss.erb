@@ -25,7 +25,8 @@
   -webkit-transition: $transition;  
   -moz-transition:    $transition;
   -ms-transition:     $transition; 
-  -o-transition:      $transition;  
+  -o-transition:      $transition;
+  transition:         $transition;  
 }
 
 main {
@@ -37,7 +38,10 @@ main {
 }
 
 body {
-  @include background-image-retina('retina_wood', 'png', 512px, 512px);
+  // @include background-image-retina('retina_wood', 'png', 512px, 512px);
+  background-image: image-url('ferry.jpg');
+  background-size: cover;
+  background-position: fixed;
   font-family: 'Ubuntu', sans-serif !important;
   font-weight: 300 !important;
   .body-content {
@@ -59,7 +63,9 @@ section {
   max-width: 360px;
   min-height: 360px;
   margin: 0 auto;
-  border: 1px
+}
+.letter-white {
+  color: #fff;
 }
 .box-letter {
   position: absolute;
@@ -74,7 +80,6 @@ section {
       @include transition(all 1s ease-in-out);
       left: #{120 * $j}px;
       top: #{120 * $i}px;
-      font-size: 4em;
     }
   }
 }
@@ -84,13 +89,3 @@ section {
   // background-image: image-url('crossword.png');
   background-color: #fff;
 }
-
-// @for $i from 0 through 8 {
-//   #title#{$i} {
-//     position: absolute;
-//     width: 120px;
-//     margin-left: #{120 + 120 * $i}px;
-//     left: 0px;
-//     font-size: 4em;
-//   }
-// }

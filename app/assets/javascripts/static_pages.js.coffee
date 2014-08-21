@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $('.static_pages.home').ready ->
+  $('.tech').addClass("letter-white")
   $('#techseven-box').mouseenter((e) ->
     $.each(
       $('.box-letter'), 
@@ -18,6 +19,8 @@ $('.static_pages.home').ready ->
         else
           $(letter).attr("id", "title" + $(letter).attr('data-pos-new'))
     )
+    $('.tech').removeClass("letter-white")
+    $('.chen').addClass("letter-white")
   )
   
   $('#techseven-box').mouseleave((e) ->
@@ -35,4 +38,6 @@ $('.static_pages.home').ready ->
         else
           $(letter).attr("id", "title" + $(letter).attr('data-pos-base'))
     )
+    $('.chen').removeClass("letter-white")
+    $('.tech').addClass("letter-white")
   )
