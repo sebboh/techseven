@@ -2,8 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$('.static_pages.home').ready ->
-  $('.tech').addClass("letter-white")
+ready = ->
+  $('.tech').addClass("letter-black")
   $('#techseven-box').mouseenter((e) ->
     $.each(
       $('.box-letter'), 
@@ -19,8 +19,8 @@ $('.static_pages.home').ready ->
         else
           $(letter).attr("id", "title" + $(letter).attr('data-pos-new'))
     )
-    $('.tech').removeClass("letter-white")
-    $('.chen').addClass("letter-white")
+    $('.tech').removeClass("letter-black")
+    $('.chen').addClass("letter-black")
   )
   
   $('#techseven-box').mouseleave((e) ->
@@ -38,6 +38,9 @@ $('.static_pages.home').ready ->
         else
           $(letter).attr("id", "title" + $(letter).attr('data-pos-base'))
     )
-    $('.chen').removeClass("letter-white")
-    $('.tech').addClass("letter-white")
+    $('.chen').removeClass("letter-black")
+    $('.tech').addClass("letter-black")
   )
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

@@ -5,6 +5,9 @@ Techseven::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
+  match '/about', to: 'static_pages#about', via: 'get', as: 'about'
+  match '/contact', to: 'static_pages#contact', via: 'get', as: 'contact'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

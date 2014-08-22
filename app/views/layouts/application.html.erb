@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="shortcut icon" href=<%= image_path "favicon.ico" %> sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= full_title(yield(:title)) %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : root_name %>">
@@ -17,10 +18,11 @@
     <main role="main">
       <%= render 'layouts/messages' %>
       <%= yield %>
+      <!-- <div class="push"></div> -->
     </main>
-    <footer class="footer">
+    <div class="footer">
       <%= render 'layouts/footer' %>
-    </footer>
-    <%= debug(params) if Rails.env.development? %>
+    </div>
+    <%#= debug(params) if Rails.env.development? %>
   </body>
 </html>
