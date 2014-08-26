@@ -61,7 +61,13 @@
 * {
   margin: 0;
 }
-
+html {
+  background: url('https://s3.amazonaws.com/techseven.net/public/ferry.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 main {
   min-height: 100%;
   height: auto !important;
@@ -69,12 +75,10 @@ main {
 }
 
 body {
-  background-image: url('https://s3.amazonaws.com/techseven.net/public/ferry.jpg');
-  background-size: cover;
-  background-attachment: fixed;
   font-family: 'Ubuntu', sans-serif !important;
   font-weight: 300 !important;
   color: #eee;
+  background-color: rgba(0, 0, 0, 0);
   margin-top: 70px;
   .body-content {
     @extend .bg-dark;
